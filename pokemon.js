@@ -122,5 +122,7 @@ btnSearch.addEventListener('click', () => {
     fetchPokemons();
 });
 
+addEventListener("keydown",(event)=>{if (event.code=="Enter") fetchPokemons()})
+
 
 
