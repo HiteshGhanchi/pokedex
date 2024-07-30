@@ -10,13 +10,14 @@ async function fetchPokemons() {
     const response = await fetch("https://pokeapi-proxy.freecodecamp.rocks/api/pokemon");
     const data = await response.json();
     pokemons = data.results;
-    inputChecker(pokemons)
+    inputChecker(pokemons);
+    console.log(pokemons);
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 };
 
-//Fetach data async for the chosen pokemon
+//Fetch data async for the chosen pokemon
 async function fetchspecificPokemon(currPokemon) {
     try {
         const response = await fetch(currPokemon.url);
@@ -122,7 +123,7 @@ btnSearch.addEventListener('click', () => {
     fetchPokemons();
 });
 
-addEventListener("keydown",(event)=>{if (event.code=="Enter") fetchPokemons()})
+document.addEventListener("keydown",(event)=>{if (event.code=="Enter") fetchPokemons()})
 
 
 
